@@ -4,16 +4,19 @@ import { Observable } from 'rxjs';
 import { Product } from './product';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ProductServiceService {
+  private urlBase = 'http://localhost:8080/inventory-app/products';
+  private clientHttp = inject(HttpClient);
 
-  private urlBase = "http://localhost:8080/inventory-app/products"
-  private clientHttp = inject(HttpClient)
-
-  listProducts(): Observable<Product[]>{
-    return this.clientHttp.get<Product[]>(this.urlBase)
+  listProducts(): Observable<Product[]> {
+    return this.clientHttp.get<Product[]>(this.urlBase);
   }
 
-  constructor() { }
+  saveProduct(product: Product): Observable<Object> {
+    return this.clientHttp.post<Object>(this.urlBase, product);
+  }
+
+  constructor() {}
 }
