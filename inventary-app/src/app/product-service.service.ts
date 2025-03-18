@@ -18,5 +18,13 @@ export class ProductServiceService {
     return this.clientHttp.post<Object>(this.urlBase, product);
   }
 
+  findById(id: number): Observable<Product> {
+    return this.clientHttp.get<Product>(`${this.urlBase}/${id}`);
+  }
+
+  deleteProduct(id: number) {
+    return this.clientHttp.delete(`${this.urlBase}/${id}`);
+  }
+
   constructor() {}
 }
