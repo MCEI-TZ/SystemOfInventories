@@ -34,4 +34,15 @@ public class ProductController {
     public Product getProductById(@PathVariable Long id){
         return this.producService.findById(id);
     }
+
+    @PutMapping("/products/{id}")
+    public Product updateProduct(@PathVariable Long id, @RequestBody Product product){
+        product.setIdProduct(id);
+        return this.producService.save(product);
+    }
+
+    @DeleteMapping("/products/{id}")
+    public void deleteProduct(@PathVariable Long id){
+        this.producService.deleteById(id);
+    }
 }
