@@ -27,8 +27,8 @@ public class ProducService implements IProductServices{
 
     @Override
     @Transactional
-    public void save(Product product) {
-        this.iProduct.save(product);
+    public Product save(Product product) {
+        return this.iProduct.save(product);
     }
 
     @Override

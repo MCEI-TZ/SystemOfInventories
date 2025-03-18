@@ -1,0 +1,60 @@
+<div class="container">
+  <div class="container m-5">
+    <h2>Add Product</h2>
+  </div>
+  <div class="card">
+    <div class="card-header text-center bg-primary-subtle">
+      <h3>New Product</h3>
+    </div>
+    <div class="card-body bg-info-subtle">
+      <form (ngSubmit)="onSubmit()">
+        <div class="mb-3">
+          <label for="name" class="form-label">Name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="name"
+            name="name"
+            [(ngModel)]="product.name"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="description" class="form-label">Description</label>
+          <input
+            type="text"
+            class="form-control"
+            id="description"
+            name="description"
+            [(ngModel)]="product.description"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="price" class="form-label">Price</label>
+          <input
+            type="number"
+            class="form-control"
+            id="price"
+            name="price"
+            [(ngModel)]="product.price"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="stock" class="form-label">Stocks</label>
+          <input
+            type="number"
+            class="form-control"
+            id="stock"
+            name="stock"
+            [(ngModel)]="product.stock"
+          />
+        </div>
+        <div class="card-footer text-center bg-transparent">
+          <div class="btn-group" role="group">
+            <button type="submit" class="btn btn-success">Editar</button>
+            <a href="/" class="btn btn-warning">Back</a>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

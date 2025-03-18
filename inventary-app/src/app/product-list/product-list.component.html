@@ -1,0 +1,39 @@
+<div class="container">
+  <div class="container text-center m-3">
+    <h2>Inventory App</h2>
+  </div>
+  <table class="table table-striped table-hover align-middle">
+    <caption>
+      List of Products
+    </caption>
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Description</th>
+        <th scope="col">Price</th>
+        <th scope="col">Stocks</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (product of products; track product.idProduct) {
+        <tr>
+          <th>{{product.idProduct}}</th>
+          <td>{{product.name}}</td>
+          <td>{{product.description}}</td>
+          <td>{{product.price}}</td>
+          <td>{{product.stock}}</td>
+          <td class="text-center">
+            <div>
+              <div class="btn-group" role="group">
+                <button (click)="editProduct(product.idProduct)" class="btn btn-warning">Edit</button>
+                <button (click)="deleteProduct(product.idProduct)" class="btn btn-danger">Delete</button>
+              </div>
+            </div>
+          </td>
+        </tr>
+      }
+    </tbody>
+  </table>
+</div>
