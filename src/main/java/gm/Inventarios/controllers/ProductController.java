@@ -29,4 +29,9 @@ public class ProductController {
         logger.info("Add product");
         return this.producService.save(product);
     }
+
+    @GetMapping("/products/{id}")
+    public Product getProductById(@PathVariable Long id){
+        return this.producService.findById(id);
+    }
 }
